@@ -1,0 +1,6 @@
+<ion-list>
+  <ion-item button *ngFor="let p of projects" detail="false" (click)="selectProject(p)">
+    <div class="color-preview" slot="start" [style.background]="p.color"></div>
+    {{ p.name }}
+  </ion-item>
+</ion-list>

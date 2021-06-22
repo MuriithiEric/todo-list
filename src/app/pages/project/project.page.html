@@ -1,0 +1,46 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/overview"></ion-back-button>
+        </ion-buttons>
+        <ion-title>{{ project?.name }}</ion-title>
+        <ion-buttons slot="end">
+            <ion-button (click)="reorderDisabled = !reorderDisabled">
+                <ion-icon slot="start" name="repeat" [color]="reorderDisabled ? 'light' : 'secondary'"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <!--<ion-list *ngIf="project">
+        <ion-item *ngFor="let t of project.tasks">
+            <ion-label>
+                {{ t.name }}
+                <p>{{ t.due | date }}</p>
+            </ion-label>
+        </ion-item>
+    </ion-list>-->
+
+    <!--<ion-reorder-group (ionItemReorder)="doReorder($event)" disabled="reorderDisabled" *ngIf="project">
+        <ion-reorder *ngFor="let t of project.tasks">
+            <ion-item>
+                <ion-label>
+                    {{ t.name }}
+                    <p>{{ t.due | date }}</p>
+                </ion-label>
+            </ion-item>
+        </ion-reorder>
+    </ion-reorder-group>-->
+    <ion-reorder-group (ionItemReorder)="doReorder($event)" disabled="reorderDisabled" *ngIf="project">
+        <ion-reorder *ngFor="let task of project.tasks">
+            <app-task-row [task]="task" (taskComplete)="taskComplete(task)"></app-task-row>
+        </ion-reorder>
+
+    </ion-reorder-group>
+
+
+
+
+
+</ion-content>

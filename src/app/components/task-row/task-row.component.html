@@ -1,0 +1,14 @@
+<div class="host" #container>
+    <div class="icon-row">
+        <ion-icon name="archive"></ion-icon>
+    </div>
+
+    <ion-item #itemref>
+        <ion-label [attr.style]="sanitizer.bypassSecurityTrustStyle('--color:' + getTaskColor())">
+            {{ task.name }}
+            <!--<p>{{task.due | date }}</p>-->
+            <p>{{task.due | customDate }}</p>
+        </ion-label>
+        <ion-reorder slot="end"></ion-reorder>
+    </ion-item>
+</div>

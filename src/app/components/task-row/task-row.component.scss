@@ -1,0 +1,18 @@
+.icon-row {
+    grid-column: 1;
+    grid-row: 1;
+    display: grid;
+    align-items: center;
+    color: #fff;
+    margin-left: 20px;
+}
+
+.host {
+    background-color: #2ecc71;
+    display: grid;
+}
+
+ion-item {
+    grid-column: 1;
+    grid-row: 1;
+}
